@@ -1,0 +1,233 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap);
+:root {
+  --main-color: #16213e;
+  --primary-color: #0f3460;
+  --secondary-color: #533483;
+  --alternative-color: #e94560;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fdfdfd;
+  background-image: linear-gradient(
+    to right top,
+    #16213e,
+    #131d35,
+    #10192c,
+    #0e1423,
+    #0a0f1b
+  );
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+header {
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  border-bottom: 1px solid var(--secondary-color);
+  background-color: #10192c;
+}
+
+header h1 {
+  letter-spacing: 2px;
+  color: var(--primary-color);
+  text-transform: uppercase;
+}
+
+header button#modal-btn {
+  border: none;
+  background: none;
+  color: var(--alternative-color);
+  cursor: pointer;
+  position: absolute;
+  top: 35px;
+  left: 35px;
+}
+
+div.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+div div.modal-box {
+  margin: 10% auto;
+  width: 600px;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+div div form input,
+div div form textarea {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+div div form textarea {
+  height: 100px;
+}
+
+div div form label {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+div div form button.btn {
+  background-color: var(--main-color);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: inherit;
+  margin-top: 10px;
+  width: 100%;
+}
+
+div div form button.btn:hover {
+  background-color: var(--alternative-color);
+}
+
+main.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+main section.ideas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+main section.ideas article.card {
+  position: relative;
+  background-color: var(--main-color);
+  margin: 10px;
+  padding: 20px 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--secondary-color);
+}
+
+main section.ideas article.card p.tag {
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 5px;
+  font-size: 14px;
+}
+
+main section.ideas article.card p.tag-technology {
+  background: steelblue;
+}
+
+main section.ideas article.card p.tag-software {
+  background: coral;
+}
+
+main section.ideas article.card p.tag-business {
+  background: green;
+}
+
+main section.ideas article.card p.tag-education {
+  background: purple;
+}
+
+main section.ideas article.card p.tag-health {
+  background: red;
+}
+
+main section.ideas article.card p.tag-inventions {
+  background: orange;
+}
+
+main section.ideas article.card button.delete {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: rgb(197, 48, 48);
+  background: none;
+  border: none;
+}
+
+main section.ideas article.card button.delete:hover {
+  color: #ff0800;
+}
+
+main section.ideas article.card p span.date {
+  color: #999;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .modal-box {
+    width: 90%;
+  }
+  main section.ideas article.card h3 {
+    font-size: 1.25rem;
+  }
+}
+@media (max-width: 414px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+  header button#modal-btn {
+    top: 25px;
+    left: 25px;
+  }
+  div div.modal-box {
+    width: 300px;
+    padding: 15px;
+  }
+}
+@media (max-width: 320px) {
+  header button#modal-btn {
+    top: 25px;
+    left: 15px;
+  }
+  main section.ideas article.card {
+    margin: 10px 0 10px 0;
+  }
+  main section.ideas {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
